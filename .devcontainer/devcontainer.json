@@ -6,17 +6,5 @@
         "version": "latest"
       }
     },
-    "runArgs": [
-      "--cap-add=NET_ADMIN",
-      "--cap-add=NET_RAW",
-      "--device=/dev/net/tun",
-      "--mount",
-      "type=volume,source=tailscale-state,target=/var/lib/tailscale"
-    ],
-    "containerEnv": {
-      "TS_AUTH_KEY": "${localEnv:TS_AUTH_KEY}"
-    },
-    "postStartCommand": "/bin/bash /.devcontainer/tailscale-init.sh",
   
-    "overrideCommand": false
   }
